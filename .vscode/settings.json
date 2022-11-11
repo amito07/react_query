@@ -1,0 +1,26 @@
+{
+    "[css]": {
+        "editor.suggest.insertMode": "replace",
+        "gitlens.codeLens.scopes": [
+            "document"
+        ]
+    },
+    "prettier.useTabs": true,
+    "editor.fontSize": 16,
+    "editor.mouseWheelZoom": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true,
+        "source.organizeImports": true
+    },
+    "javascript.suggest.autoImports": false,
+    "explorer.confirmDragAndDrop": false,
+    "editor.formatOnSave": true,
+    "workbench.iconTheme": "vscode-icons",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "prettier.endOfLine": "auto",
+    "workbench.colorCustomizations": {
+        "terminal.foreground":"#63F2AD",
+        "terminal.background":"#1E1D2A",
+    }
+
+}
