@@ -1,5 +1,5 @@
 import React from "react";
-import { useSuperHero } from "../customHooks/useSuperHeroHooks";
+import { UseSuperHero } from "../customHooks/useSuperHeroHooks";
 import { useParams } from "react-router-dom";
 
 const RQSuperHero = () => {
@@ -11,7 +11,7 @@ const RQSuperHero = () => {
 		console.log("Something went wrong Hero Page", err);
 	};
 
-	const { data } = useSuperHero(onSuccess, onError, id);
+	const { data } = UseSuperHero(onSuccess, onError, id);
 	console.log(data);
 	return (
 		<div>

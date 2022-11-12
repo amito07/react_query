@@ -4,22 +4,31 @@ const fetchAllHeros = () => {
 	return axios.get("http://localhost:4000/superheroes");
 };
 
+const fetchFriends = () => {
+	return axios.get("http://localhost:4000/friends");
+};
+
 const fetchOneHeros = ({ queryKey }) => {
 	const id = queryKey[1];
 	return axios.get(`http://localhost:4000/superheroes/${id}`);
 };
 
-export const useSuperHeros = (onSuccess, onError) => {
+export const UseSuperHeros = (onSuccess, onError) => {
 	return useQuery("super-hero", fetchAllHeros, {
-		enabled: false,
-		refetchIntervalInBackground: true,
 		onSuccess,
 		onError,
 	});
 };
 
-export const useSuperHero = (onSuccess, onError, id) => {
+export const UseSuperHero = (onSuccess, onError, id) => {
 	return useQuery(["super-hero-one", id], fetchOneHeros, {
+		onSuccess,
+		onError,
+	});
+};
+
+export const Usefriends = (onSuccess, onError) => {
+	return useQuery("friends", fetchFriends, {
 		onSuccess,
 		onError,
 	});

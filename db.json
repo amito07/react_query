@@ -30,5 +30,27 @@
       "name": "Wolverine 1",
       "alterEgo": "Prince of Hell"
     }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "name": "Amit",
+      "alterEgo": "Bruce Wayne"
+    },
+    {
+      "id": 2,
+      "name": "Avi",
+      "alterEgo": "Clark Kent"
+    },
+    {
+      "id": 3,
+      "name": "Fahim",
+      "alterEgo": "Princess Diana"
+    },
+    {
+      "id": 4,
+      "name": "Morol",
+      "alterEgo": "Prince of Hell"
+    }
   ]
 }

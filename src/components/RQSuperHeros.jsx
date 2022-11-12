@@ -1,15 +1,16 @@
 import React from "react";
-import {Link} from "react-router-dom"
-import {useSuperHeros} from "../customHooks/useSuperHeroHooks";
+import { Link } from "react-router-dom";
+import { UseSuperHeros } from "../customHooks/useSuperHeroHooks";
 
 const RQSuperHeros = () => {
 	const onSuccess = (data) => {
-		console.log("Data received from Super Heros: ",data);
+		console.log("Data received from Super Heros: ", data);
 	};
 	const onError = (err) => {
-		console.log("Something went wrong Super Heros",err)
+		console.log("Something went wrong Super Heros", err);
 	};
-	const { isLoading, data, isError, error, isFetching, refetch } = useSuperHeros(onSuccess,onError)
+	const { isLoading, data, isError, error, isFetching, refetch } =
+		UseSuperHeros(onSuccess, onError);
 
 	if (isLoading) {
 		return <h2>Loading...</h2>;
