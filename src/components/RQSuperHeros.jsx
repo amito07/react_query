@@ -1,28 +1,15 @@
 import React from "react";
-import { useQuery } from "react-query";
-import axios from "axios";
-
-const fetchFunction = () => {
-	return axios.get("http://localhost:4000/superheroes");
-};
+import {Link} from "react-router-dom"
+import {useSuperHeros} from "../customHooks/useSuperHeroHooks";
 
 const RQSuperHeros = () => {
 	const onSuccess = (data) => {
-		console.log("Data received from server: ",data);
+		console.log("Data received from Super Heros: ",data);
 	};
 	const onError = (err) => {
-		console.log("Something went wrong",err)
+		console.log("Something went wrong Super Heros",err)
 	};
-	const { isLoading, data, isError, error, isFetching, refetch } = useQuery(
-		"super-hero",
-		fetchFunction,
-		{
-			enabled: false,
-			refetchIntervalInBackground:true,
-			onSuccess,
-			onError
-		}
-	);
+	const { isLoading, data, isError, error, isFetching, refetch } = useSuperHeros(onSuccess,onError)
 
 	if (isLoading) {
 		return <h2>Loading...</h2>;
@@ -38,7 +25,9 @@ const RQSuperHeros = () => {
 			{data?.data.map((v, i) => {
 				return (
 					<ul key={i}>
-						<li key={i}>{v.name}</li>
+						<li key={i}>
+							<Link to={`/superHero/${v.id}`}>{v.name}</Link>
+						</li>
 					</ul>
 				);
 			})}

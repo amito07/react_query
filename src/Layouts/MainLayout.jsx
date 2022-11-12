@@ -3,6 +3,7 @@ import React from "react";
 import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
 import HomePage from "../components/HomePage";
 import RQSuperHeros from "../components/RQSuperHeros";
+import RQSuperHero from "../components/RQSuperHero";
 const { Header, Footer, Content } = Layout;
 
 const MainLayout = () => {
@@ -27,6 +28,7 @@ const MainLayout = () => {
 					<Routes>
 						<Route exact path="/" element={<HomePage />} />
 						<Route exact path="/superHeros" element={<RQSuperHeros />} />
+						<Route exact path="/superHero/:id" element={<RQSuperHero />} />
 					</Routes>
 				</Router>
 			</Content>
