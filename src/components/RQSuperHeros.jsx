@@ -20,7 +20,11 @@ const RQSuperHeros = () => {
 			enabled: false,
 			refetchIntervalInBackground:true,
 			onSuccess,
-			onError
+			onError,
+			select:(data)=>{
+				const superHerosName = data.data.map((v)=> v.name)
+				return superHerosName;
+			}
 		}
 	);
 
@@ -35,10 +39,17 @@ const RQSuperHeros = () => {
 		<>
 			<h1>Super Hero List</h1>
 			<button onClick={refetch}>Refetch Data</button>
-			{data?.data.map((v, i) => {
+			{/* {data?.data.map((v, i) => {
 				return (
 					<ul key={i}>
 						<li key={i}>{v.name}</li>
+					</ul>
+				);
+			})} */}
+			{data?.map((v) => {
+				return (
+					<ul key={v}>
+						<li key={v}>{v}</li>
 					</ul>
 				);
 			})}
